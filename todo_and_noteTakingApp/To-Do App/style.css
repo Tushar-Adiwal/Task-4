@@ -1,0 +1,195 @@
+/* === Reset & Body === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    transition: background 0.3s ease;
+}
+
+/* === Container === */
+.container {
+    width: 400px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* === Heading === */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* === Theme Toggle === */
+.theme-toggle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.theme-toggle input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* === Input Area === */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-shadow: inset 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#addBtn {
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59,130,246,0.5);
+}
+
+/* === Task List === */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#taskList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* === Task Text === */
+.task-text {
+    flex: 1;
+    text-align: left;
+    transition: color 0.25s, text-decoration 0.25s;
+}
+
+/* === Completed Task === */
+.completed {
+    text-decoration: line-through;
+    color: #10b981;
+}
+
+/* === Delete Button === */
+.delete-btn {
+    background: #ef4444;
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/* === Clear All Button === */
+.clear-all {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clear-all:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* === Dark Mode === */
+body.light {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe, #93c5fd);
+}
+
+body.light .container {
+    background: rgba(255,255,255,0.9);
+    color: #1e293b;
+}
+
+body.light #taskList li {
+    background: rgba(255,255,255,0.95);
+    color: #1e293b;
+}
+
+body.light .task-text.completed {
+    color: #16a34a;
+}
+
+body.light #addBtn {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+body.light .clear-all {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* === Responsive === */
+@media(max-width:450px){
+    .container{
+        width:90%;
+        padding:20px;
+    }
+
+    #taskInput, #addBtn, .clear-all{
+        font-size:14px;
+        padding:12px;
+    }
+}
